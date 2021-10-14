@@ -7,14 +7,27 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#properties"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.mapcss",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.mapcss",
+					"match": "node|area|way|line|relation|canvas|\\*"
+				},
+				{
+					"name": "keyword.osmkey.mapcss",
+					"match": "(?<=\\[)!*?\\w+?(?=[\\],=])"
+				},
+				{
+					"name": "keyword.osmtag.mapcss",
+					"match": "(?<=\\[!*?\\w+?=)\\w+?(?=\\])"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.mapcss",
@@ -24,6 +37,14 @@
 				{
 					"name": "constant.character.escape.mapcss",
 					"match": "\\\\."
+				}
+			]
+		},
+		"properties": {
+			"patterns": [
+				{
+					"name": "property-name.mapcss",
+					"match": "^ +:"
 				}
 			]
 		}
